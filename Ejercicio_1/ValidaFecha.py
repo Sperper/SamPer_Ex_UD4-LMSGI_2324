@@ -12,15 +12,15 @@ from datetime import datetime
 
 def validate_date_format(date_string):
     try:
-        datetime.strptime(date_string, "%d-%m-%Y")
+        datetime.strptime(date_string, "%d/%m/%Y")
         return True
     except ValueError:
         return False
-with open("datos.json") as json_file:
+with open("Ejercicio_1/datos.json") as json_file:
     data = json.load(json_file)
     
     if "fecha_nacimiento" in data:
-        if validate_date_format(data["fecha_nacimimento"]):
+        if validate_date_format(data["fecha_nacimiento"]):
             print("Fecha de nacimiento válida")
         else:
             print("Fecha de nacimiento inválida")
